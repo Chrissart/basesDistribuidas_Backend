@@ -1,0 +1,14 @@
+Executing (default): SELECT `id`, `neighborhood_id`, `street`, `exterior_number`, `interior_number`, `postal_code`, `createdAt`, `updatedAt` FROM `Addresses` AS `Address`;
+Executing (default): SELECT `id`, `neighborhood_id`, `street`, `exterior_number`, `interior_number`, `postal_code`, `createdAt`, `updatedAt` FROM `Addresses` AS `Address`;
+Executing (default): SELECT `id`, `neighborhood_id`, `street`, `exterior_number`, `interior_number`, `postal_code`, `createdAt`, `updatedAt` FROM `Addresses` AS `Address`;
+Executing (default): SELECT `id`, `neighborhood_id`, `street`, `exterior_number`, `interior_number`, `postal_code`, `createdAt`, `updatedAt` FROM `Addresses` AS `Address`;
+Executing (default): SELECT `id`, `neighborhood_id`, `street`, `exterior_number`, `interior_number`, `postal_code`, `createdAt`, `updatedAt` FROM `Addresses` AS `Address`;
+Executing (default): SELECT count(*) AS `count` FROM `Addresses` AS `Address`;
+Executing (default): SELECT count(*) AS `count` FROM `Addresses` AS `Address`;
+Executing (default): SELECT `id`, `neighborhood_id`, `street`, `exterior_number`, `interior_number`, `postal_code`, `createdAt`, `updatedAt` FROM `Addresses` AS `Address`;
+Executing (default): SELECT `id`, `neighborhood_id`, `street`, `exterior_number`, `interior_number`, `postal_code`, `createdAt`, `updatedAt` FROM `Addresses` AS `Address`;
+Executing (default): SELECT `id`, `neighborhood_id`, `street`, `exterior_number`, `interior_number`, `postal_code`, `createdAt`, `updatedAt` FROM `Addresses` AS `Address`;
+Executing (default): SELECT `id`, `neighborhood_id`, `street`, `exterior_number`, `interior_number`, `postal_code`, `createdAt`, `updatedAt` FROM `Addresses` AS `Address`;
+Executing (default): SELECT `id`, `neighborhood_id`, `street`, `exterior_number`, `interior_number`, `postal_code`, `createdAt`, `updatedAt` FROM `Addresses` AS `Address`;
+Executing (default): SELECT `id`, `neighborhood_id`, `street`, `exterior_number`, `interior_number`, `postal_code`, `createdAt`, `updatedAt` FROM `Addresses` AS `Address`;
+Executing (default): SELECT `id`, `neighborhood_id`, `street`, `exterior_number`, `interior_number`, `postal_code` FROM `Addresses` AS `Address`;

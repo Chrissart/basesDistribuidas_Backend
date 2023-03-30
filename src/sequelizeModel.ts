@@ -9,7 +9,7 @@ const Address = sequelize.define('Address', {
   street: DataTypes.STRING,
   exterior_number: DataTypes.STRING,
   interior_number: DataTypes.STRING,
-  postal_code: DataTypes.STRING,
+  postal_code: DataTypes.STRING
 });
 
 const Case = sequelize.define('Case', {

@@ -15,7 +15,7 @@ const Address = sequelize_2.default.define('Address', {
     street: sequelize_1.DataTypes.STRING,
     exterior_number: sequelize_1.DataTypes.STRING,
     interior_number: sequelize_1.DataTypes.STRING,
-    postal_code: sequelize_1.DataTypes.STRING,
+    postal_code: sequelize_1.DataTypes.STRING
 });
 exports.Address = Address;
 const Case = sequelize_2.default.define('Case', {
