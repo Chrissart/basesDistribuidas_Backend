@@ -35,6 +35,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.resolvers = exports.typeDefs = void 0;
 const { gql } = require('apollo-server-express');
 const Sequelize = require('sequelize');
+const { ApolloError } = require('apollo-server-express');
+// import { makeExecutableSchema } from 'graphql-tools'; pa usar esta wea se debe instalar el graphql-tools
 const sequelizeModel = __importStar(require("./sequelizeModel"));
 const typeDefs = gql `
   type Address {
@@ -161,9 +163,72 @@ const typeDefs = gql `
     name: String!
   }
 
+
   type Query {
     getAddresses: String!
   }
+
+  type Query {
+    getCases: String!
+  }
+
+  type Query {
+    getCasesDescriptions: String!
+  }
+
+  type Query {
+    getCasesStatus: String!
+  }
+
+  type Query {
+    getCities: String!
+  }
+
+  type Query {
+    getDecisions: String!
+  }
+
+  type Query {
+    getEvidences: String!
+  }
+
+  type Query {
+    getEvidencesDescriptions: String!
+  }
+
+  type Query {
+    getInvolvedCases: String!
+  }
+
+  type Query {
+    getNeighborhoods: String!
+  }
+
+  type Query {
+    getObservations: String!
+  }
+
+  type Query {
+    getParties: String!
+  }
+  
+  type Query {
+    getStages: String!
+  }
+
+  type Query {
+    getStagesDescriptions: String!
+  }
+
+  type Query {
+    getState: String!
+  }
+
+  type Query {
+    getUserTypes: String!
+  }
+  
+  
   `;
 exports.typeDefs = typeDefs;
 const resolvers = {
@@ -173,12 +238,79 @@ const resolvers = {
             const addresses = yield sequelizeModel.Address.findAll();
             return addresses;
         }),
+        getCases: () => __awaiter(void 0, void 0, void 0, function* () {
+            const Case = yield sequelizeModel.Case.findAll();
+            return Case;
+        }),
+        getCasesDescriptions: () => __awaiter(void 0, void 0, void 0, function* () {
+            const CaseDescription = yield sequelizeModel.CaseDescription.findAll();
+            return CaseDescription;
+        }),
+        getCasesStatus: () => __awaiter(void 0, void 0, void 0, function* () {
+            const CaseStatus = yield sequelizeModel.CaseStatus.findAll();
+            return CaseStatus;
+        }),
+        getCities: () => __awaiter(void 0, void 0, void 0, function* () {
+            const City = yield sequelizeModel.City.findAll();
+            return City;
+        }),
+        getDecisions: () => __awaiter(void 0, void 0, void 0, function* () {
+            const Decision = yield sequelizeModel.Decision.findAll();
+            return Decision;
+        }),
+        getEvidences: () => __awaiter(void 0, void 0, void 0, function* () {
+            const Evidence = yield sequelizeModel.Evidence.findAll();
+            return Evidence;
+        }),
+        getEvidencesDescriptions: () => __awaiter(void 0, void 0, void 0, function* () {
+            const EvidenceDescription = yield sequelizeModel.EvidenceDescription.findAll();
+            return EvidenceDescription;
+        }),
+        getInvolvedCases: () => __awaiter(void 0, void 0, void 0, function* () {
+            const InvolvedCase = yield sequelizeModel.InvolvedCase.findAll();
+            return InvolvedCase;
+        }),
+        getNeighborhoods: () => __awaiter(void 0, void 0, void 0, function* () {
+            const Neighborhood = yield sequelizeModel.Neighborhood.findAll();
+            return Neighborhood;
+        }),
+        getObservations: () => __awaiter(void 0, void 0, void 0, function* () {
+            const Observation = yield sequelizeModel.Observation.findAll();
+            return Observation;
+        }),
+        getParties: () => __awaiter(void 0, void 0, void 0, function* () {
+            const Parties = yield sequelizeModel.Parties.findAll();
+            return Parties;
+        }),
+        getStagesDescriptions: () => __awaiter(void 0, void 0, void 0, function* () {
+            const StageDescription = yield sequelizeModel.StageDescription.findAll();
+            return StageDescription;
+        }),
+        getStages: () => __awaiter(void 0, void 0, void 0, function* () {
+            const Stages = yield sequelizeModel.Stages.findAll();
+            return Stages;
+        }),
+        getState: () => __awaiter(void 0, void 0, void 0, function* () {
+            const States = yield sequelizeModel.States.findAll();
+            return States;
+        }),
+        getUserTypes: () => __awaiter(void 0, void 0, void 0, function* () {
+            const UserTypes = yield sequelizeModel.UserTypes.findAll();
+            return UserTypes;
+        }),
     },
     /*
     Mutation: {
       // aquí van las funciones resolvers para las mutaciones
-  
-      
+      createAddress: (_, { name, description, price }, { dataSources }) => {
+        return dataSources.productAPI.createAddress({ name, description, price });
+      },
+      updateAddress: (_, { id, name, description, price }, { dataSources }) => {
+        return dataSources.productAPI.updateAddress({ id, name, description, price });
+      },
+      deleteAddress: (_, { id }, { dataSources }) => {
+        return dataSources.productAPI.deleteAddress({ id });
+      },
     },
     /*
     Address: {
@@ -230,4 +362,5 @@ const resolvers = {
   */
 };
 exports.resolvers = resolvers;
+//export default makeExecutableSchema({ typeDefs, resolvers });
 //# sourceMappingURL=graphqlSchema.js.map

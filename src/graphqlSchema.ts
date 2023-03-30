@@ -1,5 +1,7 @@
 const { gql } = require('apollo-server-express');
 const Sequelize = require('sequelize');
+const { ApolloError } = require('apollo-server-express');
+// import { makeExecutableSchema } from 'graphql-tools'; pa usar esta wea se debe instalar el graphql-tools
 import * as sequelizeModel from './sequelizeModel'
 
 const typeDefs = gql`
@@ -127,9 +129,72 @@ const typeDefs = gql`
     name: String!
   }
 
+
   type Query {
     getAddresses: String!
   }
+
+  type Query {
+    getCases: String!
+  }
+
+  type Query {
+    getCasesDescriptions: String!
+  }
+
+  type Query {
+    getCasesStatus: String!
+  }
+
+  type Query {
+    getCities: String!
+  }
+
+  type Query {
+    getDecisions: String!
+  }
+
+  type Query {
+    getEvidences: String!
+  }
+
+  type Query {
+    getEvidencesDescriptions: String!
+  }
+
+  type Query {
+    getInvolvedCases: String!
+  }
+
+  type Query {
+    getNeighborhoods: String!
+  }
+
+  type Query {
+    getObservations: String!
+  }
+
+  type Query {
+    getParties: String!
+  }
+  
+  type Query {
+    getStages: String!
+  }
+
+  type Query {
+    getStagesDescriptions: String!
+  }
+
+  type Query {
+    getState: String!
+  }
+
+  type Query {
+    getUserTypes: String!
+  }
+  
+  
   `;
 
 const resolvers = {
@@ -139,12 +204,79 @@ const resolvers = {
         const addresses = await sequelizeModel.Address.findAll();
         return addresses;
       },
-  }, 
+    getCases: async () => {
+        const Case = await sequelizeModel.Case.findAll();
+        return Case;
+      },
+    getCasesDescriptions: async () => {
+        const CaseDescription = await sequelizeModel.CaseDescription.findAll();
+        return CaseDescription;
+      },
+    getCasesStatus: async () => {
+        const CaseStatus = await sequelizeModel.CaseStatus.findAll();
+        return CaseStatus;
+      },
+    getCities: async () => {
+        const City = await sequelizeModel.City.findAll();
+        return City;
+      },
+    getDecisions: async () => {
+        const Decision = await sequelizeModel.Decision.findAll();
+        return Decision;
+      },
+    getEvidences: async () => {
+        const Evidence = await sequelizeModel.Evidence.findAll();
+        return Evidence;
+      },
+    getEvidencesDescriptions: async () => {
+        const EvidenceDescription = await sequelizeModel.EvidenceDescription.findAll();
+        return EvidenceDescription;
+      },
+    getInvolvedCases: async () => {
+        const InvolvedCase = await sequelizeModel.InvolvedCase.findAll();
+        return InvolvedCase;
+      },
+    getNeighborhoods: async () => {
+        const Neighborhood = await sequelizeModel.Neighborhood.findAll();
+        return Neighborhood;
+      },
+    getObservations: async () => {
+        const Observation = await sequelizeModel.Observation.findAll();
+        return Observation;
+      },
+    getParties: async () => {
+        const Parties = await sequelizeModel.Parties.findAll();
+        return Parties;
+      },
+    getStagesDescriptions: async () => {
+        const StageDescription = await sequelizeModel.StageDescription.findAll();
+        return StageDescription;
+      },
+    getStages: async () => {
+        const Stages = await sequelizeModel.Stages.findAll();
+        return Stages;
+      },
+    getState: async () => {
+        const States = await sequelizeModel.States.findAll();
+        return States;
+      },
+    getUserTypes: async () => {
+        const UserTypes = await sequelizeModel.UserTypes.findAll();
+        return UserTypes;
+     },
+  },
   /*
   Mutation: {
     // aquí van las funciones resolvers para las mutaciones
-
-    
+    createAddress: (_, { name, description, price }, { dataSources }) => {
+      return dataSources.productAPI.createAddress({ name, description, price });
+    },
+    updateAddress: (_, { id, name, description, price }, { dataSources }) => {
+      return dataSources.productAPI.updateAddress({ id, name, description, price });
+    },
+    deleteAddress: (_, { id }, { dataSources }) => {
+      return dataSources.productAPI.deleteAddress({ id });
+    },  
   },
   /*
   Address: {
@@ -197,3 +329,4 @@ const resolvers = {
 };
   
 export {typeDefs, resolvers};
+//export default makeExecutableSchema({ typeDefs, resolvers });

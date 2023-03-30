@@ -147,7 +147,6 @@ const Stages = sequelize_2.default.define('Stages', {
         primaryKey: true
     },
     case_id: sequelize_1.DataTypes.NUMBER,
-    references: sequelize_1.DataTypes.STRING,
     start_date: sequelize_1.DataTypes.DATE,
     end_date: sequelize_1.DataTypes.DATE,
 });

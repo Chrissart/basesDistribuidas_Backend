@@ -12,3 +12,7 @@ Executing (default): SELECT `id`, `neighborhood_id`, `street`, `exterior_number`
 Executing (default): SELECT `id`, `neighborhood_id`, `street`, `exterior_number`, `interior_number`, `postal_code`, `createdAt`, `updatedAt` FROM `Addresses` AS `Address`;
 Executing (default): SELECT `id`, `neighborhood_id`, `street`, `exterior_number`, `interior_number`, `postal_code`, `createdAt`, `updatedAt` FROM `Addresses` AS `Address`;
 Executing (default): SELECT `id`, `neighborhood_id`, `street`, `exterior_number`, `interior_number`, `postal_code` FROM `Addresses` AS `Address`;
+Executing (default): SELECT `id`, `neighborhood_id`, `street`, `exterior_number`, `interior_number`, `postal_code` FROM `Addresses` AS `Address`;
+Executing (default): SELECT `id`, `case_number`, `start_date`, `status_id` FROM `Cases` AS `Case`;
+Executing (default): SELECT `id`, `case_id`, `references`, `start_date`, `end_date` FROM `Stages` AS `Stages`;
+Executing (default): SELECT `id`, `case_id`, `start_date`, `end_date` FROM `Stages` AS `Stages`;
