@@ -254,7 +254,7 @@ const resolvers = {
       },
     getStages: async () => {
         const Stages = await sequelizeModel.Stages.findAll();
-        return Stages;
+        return JSON.stringify(Stages);
       },
     getState: async () => {
         const States = await sequelizeModel.States.findAll();
