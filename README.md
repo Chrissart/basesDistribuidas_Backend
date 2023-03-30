@@ -12,7 +12,7 @@
 + ts-node@10.9.1
 + typescript@5.0.2
 
-##Comando para iniciar el servidor:
+## Comando para iniciar el servidor:
 npm start
 
 ## Instrucciones adicionales
