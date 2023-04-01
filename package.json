@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@apollo/client": "^3.7.10",
     "@types/node": "^18.15.10",
     "@types/sequelize": "^4.28.14",
     "apollo-server-express": "^3.12.0",

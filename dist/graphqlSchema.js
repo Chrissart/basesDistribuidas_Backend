@@ -288,7 +288,8 @@ const resolvers = {
         }),
         getStages: () => __awaiter(void 0, void 0, void 0, function* () {
             const Stages = yield sequelizeModel.Stages.findAll();
-            return Stages;
+            return Stages.map(obj => JSON.stringify(obj.dataValues));
+            ;
         }),
         getState: () => __awaiter(void 0, void 0, void 0, function* () {
             const States = yield sequelizeModel.States.findAll();
