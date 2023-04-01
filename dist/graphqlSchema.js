@@ -238,67 +238,6 @@ const resolvers = {
             const addresses = yield sequelizeModel.Address.findAll();
             return addresses;
         }),
-        getCases: () => __awaiter(void 0, void 0, void 0, function* () {
-            const Case = yield sequelizeModel.Case.findAll();
-            return Case;
-        }),
-        getCasesDescriptions: () => __awaiter(void 0, void 0, void 0, function* () {
-            const CaseDescription = yield sequelizeModel.CaseDescription.findAll();
-            return CaseDescription;
-        }),
-        getCasesStatus: () => __awaiter(void 0, void 0, void 0, function* () {
-            const CaseStatus = yield sequelizeModel.CaseStatus.findAll();
-            return CaseStatus;
-        }),
-        getCities: () => __awaiter(void 0, void 0, void 0, function* () {
-            const City = yield sequelizeModel.City.findAll();
-            return City;
-        }),
-        getDecisions: () => __awaiter(void 0, void 0, void 0, function* () {
-            const Decision = yield sequelizeModel.Decision.findAll();
-            return Decision;
-        }),
-        getEvidences: () => __awaiter(void 0, void 0, void 0, function* () {
-            const Evidence = yield sequelizeModel.Evidence.findAll();
-            return Evidence;
-        }),
-        getEvidencesDescriptions: () => __awaiter(void 0, void 0, void 0, function* () {
-            const EvidenceDescription = yield sequelizeModel.EvidenceDescription.findAll();
-            return EvidenceDescription;
-        }),
-        getInvolvedCases: () => __awaiter(void 0, void 0, void 0, function* () {
-            const InvolvedCase = yield sequelizeModel.InvolvedCase.findAll();
-            return InvolvedCase;
-        }),
-        getNeighborhoods: () => __awaiter(void 0, void 0, void 0, function* () {
-            const Neighborhood = yield sequelizeModel.Neighborhood.findAll();
-            return Neighborhood;
-        }),
-        getObservations: () => __awaiter(void 0, void 0, void 0, function* () {
-            const Observation = yield sequelizeModel.Observation.findAll();
-            return Observation;
-        }),
-        getParties: () => __awaiter(void 0, void 0, void 0, function* () {
-            const Parties = yield sequelizeModel.Parties.findAll();
-            return Parties;
-        }),
-        getStagesDescriptions: () => __awaiter(void 0, void 0, void 0, function* () {
-            const StageDescription = yield sequelizeModel.StageDescription.findAll();
-            return StageDescription;
-        }),
-        getStages: () => __awaiter(void 0, void 0, void 0, function* () {
-            const Stages = yield sequelizeModel.Stages.findAll();
-            return Stages.map(obj => JSON.stringify(obj.dataValues));
-            ;
-        }),
-        getState: () => __awaiter(void 0, void 0, void 0, function* () {
-            const States = yield sequelizeModel.States.findAll();
-            return States;
-        }),
-        getUserTypes: () => __awaiter(void 0, void 0, void 0, function* () {
-            const UserTypes = yield sequelizeModel.UserTypes.findAll();
-            return UserTypes;
-        }),
     },
     /*
     Mutation: {

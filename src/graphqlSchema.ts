@@ -204,66 +204,6 @@ const resolvers = {
         const addresses = await sequelizeModel.Address.findAll();
         return addresses;
       },
-    getCases: async () => {
-        const Case = await sequelizeModel.Case.findAll();
-        return Case;
-      },
-    getCasesDescriptions: async () => {
-        const CaseDescription = await sequelizeModel.CaseDescription.findAll();
-        return CaseDescription;
-      },
-    getCasesStatus: async () => {
-        const CaseStatus = await sequelizeModel.CaseStatus.findAll();
-        return CaseStatus;
-      },
-    getCities: async () => {
-        const City = await sequelizeModel.City.findAll();
-        return City;
-      },
-    getDecisions: async () => {
-        const Decision = await sequelizeModel.Decision.findAll();
-        return Decision;
-      },
-    getEvidences: async () => {
-        const Evidence = await sequelizeModel.Evidence.findAll();
-        return Evidence;
-      },
-    getEvidencesDescriptions: async () => {
-        const EvidenceDescription = await sequelizeModel.EvidenceDescription.findAll();
-        return EvidenceDescription;
-      },
-    getInvolvedCases: async () => {
-        const InvolvedCase = await sequelizeModel.InvolvedCase.findAll();
-        return InvolvedCase;
-      },
-    getNeighborhoods: async () => {
-        const Neighborhood = await sequelizeModel.Neighborhood.findAll();
-        return Neighborhood;
-      },
-    getObservations: async () => {
-        const Observation = await sequelizeModel.Observation.findAll();
-        return Observation;
-      },
-    getParties: async () => {
-        const Parties = await sequelizeModel.Parties.findAll();
-        return Parties;
-      },
-    getStagesDescriptions: async () => {
-        const StageDescription = await sequelizeModel.StageDescription.findAll();
-        return StageDescription;
-      },
-    getStages: async () => {
-        const Stages = await sequelizeModel.Stages.findAll();
-        return JSON.stringify(Stages);
-      },
-    getState: async () => {
-        const States = await sequelizeModel.States.findAll();
-        return States;
-      },
-    getUserTypes: async () => {
-        const UserTypes = await sequelizeModel.UserTypes.findAll();
-        return UserTypes;
-     },
   },
   /*
   Mutation: {

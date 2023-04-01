@@ -20,7 +20,7 @@ function startServer() {
     return __awaiter(this, void 0, void 0, function* () {
         yield server.start();
         const app = (0, express_1.default)();
-        server.applyMiddleware({ app });
+        server.applyMiddleware({ app, path: '/graphql' });
         app.listen({ port: 4000 }, () => console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`));
     });
 }
