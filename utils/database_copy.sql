@@ -1,3 +1,6 @@
+CREATE DATABASE juicios;
+USE juicios;
+
 CREATE TABLE `addresses` (
   `id` int NOT NULL AUTO_INCREMENT,
   `neighborhood_id` int NOT NULL,
@@ -8,7 +11,7 @@ CREATE TABLE `addresses` (
   PRIMARY KEY (`id`),
   KEY `neighborhood_id` (`neighborhood_id`),
   CONSTRAINT `addresses_ibfk_1` FOREIGN KEY (`neighborhood_id`) REFERENCES `neighborhoods` (`id`)
-)
+);
 CREATE TABLE `case_descriptions` (
   `id` int NOT NULL AUTO_INCREMENT,
   `case_id` int NOT NULL,
@@ -16,13 +19,13 @@ CREATE TABLE `case_descriptions` (
   PRIMARY KEY (`id`),
   KEY `case_id` (`case_id`),
   CONSTRAINT `case_descriptions_ibfk_1` FOREIGN KEY (`case_id`) REFERENCES `cases` (`id`)
-)
+);
 CREATE TABLE `case_status` (
   `id` int NOT NULL AUTO_INCREMENT,
   `status_name` varchar(50) NOT NULL,
   `description` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
-)
+);
 CREATE TABLE `cases` (
   `id` int NOT NULL AUTO_INCREMENT,
   `case_number` varchar(20) NOT NULL,
@@ -32,7 +35,7 @@ CREATE TABLE `cases` (
   UNIQUE KEY `case_number` (`case_number`),
   KEY `status_id` (`status_id`),
   CONSTRAINT `cases_ibfk_1` FOREIGN KEY (`status_id`) REFERENCES `case_status` (`id`)
-)
+);
 CREATE TABLE `cities` (
   `id` int NOT NULL AUTO_INCREMENT,
   `state_id` int NOT NULL,
@@ -40,7 +43,7 @@ CREATE TABLE `cities` (
   PRIMARY KEY (`id`),
   KEY `state_id` (`state_id`),
   CONSTRAINT `cities_ibfk_1` FOREIGN KEY (`state_id`) REFERENCES `states` (`id`)
-)
+);
 CREATE TABLE `decisions` (
   `id` int NOT NULL AUTO_INCREMENT,
   `case_id` int NOT NULL,
@@ -55,7 +58,7 @@ CREATE TABLE `decisions` (
   CONSTRAINT `decisions_ibfk_1` FOREIGN KEY (`case_id`) REFERENCES `cases` (`id`),
   CONSTRAINT `decisions_ibfk_2` FOREIGN KEY (`stage_id`) REFERENCES `stages` (`id`),
   CONSTRAINT `fk_decisions_involved_cases` FOREIGN KEY (`user_id`) REFERENCES `involved_cases` (`id`)
-)
+);
 CREATE TABLE `evidence` (
   `id` int NOT NULL AUTO_INCREMENT,
   `stage_id` int NOT NULL,
@@ -63,7 +66,7 @@ CREATE TABLE `evidence` (
   PRIMARY KEY (`id`),
   KEY `stage_id` (`stage_id`),
   CONSTRAINT `evidence_ibfk_1` FOREIGN KEY (`stage_id`) REFERENCES `stages` (`id`)
-)
+);
 CREATE TABLE `evidence_descriptions` (
   `id` int NOT NULL AUTO_INCREMENT,
   `evidence_id` int NOT NULL,
@@ -72,7 +75,7 @@ CREATE TABLE `evidence_descriptions` (
   PRIMARY KEY (`id`),
   KEY `evidence_id` (`evidence_id`),
   CONSTRAINT `evidence_descriptions_ibfk_1` FOREIGN KEY (`evidence_id`) REFERENCES `evidence` (`id`)
-)
+);
 CREATE TABLE `involved_cases` (
   `id` int NOT NULL AUTO_INCREMENT,
   `person_id` int NOT NULL,
@@ -85,7 +88,7 @@ CREATE TABLE `involved_cases` (
   CONSTRAINT `fk_involved_cases_cases` FOREIGN KEY (`case_id`) REFERENCES `cases` (`id`),
   CONSTRAINT `fk_involved_cases_parties` FOREIGN KEY (`person_id`) REFERENCES `parties` (`id`),
   CONSTRAINT `fk_involved_cases_user_levels` FOREIGN KEY (`level_id`) REFERENCES `user_type` (`id`)
-)
+);
 CREATE TABLE `neighborhoods` (
   `id` int NOT NULL AUTO_INCREMENT,
   `city_id` int NOT NULL,
@@ -93,7 +96,7 @@ CREATE TABLE `neighborhoods` (
   PRIMARY KEY (`id`),
   KEY `city_id` (`city_id`),
   CONSTRAINT `neighborhoods_ibfk_1` FOREIGN KEY (`city_id`) REFERENCES `cities` (`id`)
-)
+);
 CREATE TABLE `observations` (
   `id` int NOT NULL AUTO_INCREMENT,
   `case_id` int NOT NULL,
@@ -108,7 +111,7 @@ CREATE TABLE `observations` (
   CONSTRAINT `fk_observations_involved_cases` FOREIGN KEY (`user_id`) REFERENCES `involved_cases` (`id`),
   CONSTRAINT `observations_ibfk_1` FOREIGN KEY (`case_id`) REFERENCES `cases` (`id`),
   CONSTRAINT `observations_ibfk_2` FOREIGN KEY (`stage_id`) REFERENCES `stages` (`id`)
-)
+);
 CREATE TABLE `parties` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
@@ -128,7 +131,7 @@ CREATE TABLE `parties` (
   CONSTRAINT `parties_ibfk_3` FOREIGN KEY (`city_id`) REFERENCES `cities` (`id`),
   CONSTRAINT `parties_ibfk_4` FOREIGN KEY (`neighborhood_id`) REFERENCES `neighborhoods` (`id`),
   CONSTRAINT `parties_ibfk_5` FOREIGN KEY (`address_id`) REFERENCES `addresses` (`id`)
-)
+);
 CREATE TABLE `stage_descriptions` (
   `id` int NOT NULL AUTO_INCREMENT,
   `stage_id` int NOT NULL,
@@ -136,7 +139,7 @@ CREATE TABLE `stage_descriptions` (
   PRIMARY KEY (`id`),
   KEY `stage_id` (`stage_id`),
   CONSTRAINT `stage_descriptions_ibfk_1` FOREIGN KEY (`stage_id`) REFERENCES `stages` (`id`)
-)
+);
 CREATE TABLE `stages` (
   `id` int NOT NULL AUTO_INCREMENT,
   `case_id` int NOT NULL,
@@ -145,15 +148,15 @@ CREATE TABLE `stages` (
   PRIMARY KEY (`id`),
   KEY `case_id` (`case_id`),
   CONSTRAINT `stages_ibfk_1` FOREIGN KEY (`case_id`) REFERENCES `cases` (`id`)
-)
+);
 CREATE TABLE `states` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-)
+);
 CREATE TABLE `user_type` (
   `id` int NOT NULL AUTO_INCREMENT,
   `type_name` varchar(50) NOT NULL,
   `description` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
-)
+);
