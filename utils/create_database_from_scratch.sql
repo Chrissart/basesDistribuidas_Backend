@@ -1,5 +1,7 @@
+DROP DATABASE IF EXISTS juicios;
 CREATE DATABASE juicios;
 USE juicios;
+SET FOREIGN_KEY_CHECKS=0;
 
 CREATE TABLE `addresses` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -160,3 +162,4 @@ CREATE TABLE `user_type` (
   `description` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
 );
+SET FOREIGN_KEY_CHECKS=1;
